@@ -1,0 +1,47 @@
+<div class="container" ng-controller="dashController">
+    <table class="table table-bordered">
+        <thead style="background:cadetblue; color:whitesmoke">
+            <tr>
+                <th>First name</th>
+                <th>Middle name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Action</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="g in gameusrcnt.data">
+                <td>{{g.firstname}}</td>
+                <td>{{g.middlename}}</td>
+                <td>{{g.lastname}}</td>
+                <td>{{g.mobile}}</td>
+                <td>{{g.email}}</td>
+
+                <td><button class="btn btn-primary" ng-click="edit(g)">Edit</button></td>
+                <td><button class="btn btn-danger" ng-click="delete(g)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="container" ng-if="hide ==true">
+        <form>
+            <label>First Name</label>
+            <input type="text" name="fn" class="form-control" ng-model="view.firstname"><br>
+            <label>Middle Name</label>
+            <input type="text" name="mn" class="form-control" ng-model="view.middlename"><br>
+            <label>Last Name</label>
+            <input type="text" name="ln" class="form-control" ng-model="view.lastname"><br>
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="view.mobile"><br>
+            <label>Mobile</label>
+
+            <input type="text" name="mbl" class="form-control" ng-model="view.email"><br>
+            
+            <button class="btn btn-primary" ng-click="update(view)">Update</button>
+        </form>
+
+    </div>
+
+</div>
